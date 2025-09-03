@@ -1,10 +1,10 @@
-const loadTodo = ()=>{
-    const url = 'https://jsonplaceholder.typicode.com/todos'
-    fetch(url)
-        .then(res => res.json()
-        .then(json => displayTodo(json))    
-    )
-}
+const loadTodo = async ()=>{
+    const url = 'https://jsonplaceholder.typicode.com/todos';
+
+    const res = await fetch(url)
+    const data = await res.json();
+    displayTodo(data);
+}  
 const displayTodo = (todos)=>{
     // step 1
     const todoContainer = document.getElementById('todo-container')
